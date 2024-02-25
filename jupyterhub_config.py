@@ -120,7 +120,6 @@ c = get_config()  #noqa
 ## DEPRECATED since version 0.7.2, use Authenticator.admin_users instead.
 #  Default: set()
 # c.JupyterHub.admin_users = set()
-c.JupyterHub.admin_users = ['admin']
 
 ## Allow named single-user servers per user
 #  Default: False
@@ -1043,7 +1042,7 @@ c.JupyterHub.admin_users = ['admin']
 #  process's environment (such as `CONFIGPROXY_AUTH_TOKEN`) is not passed to the
 #  single-user server's process.
 #  Default: ['PATH', 'PYTHONPATH', 'CONDA_ROOT', 'CONDA_DEFAULT_ENV', 'VIRTUAL_ENV', 'LANG', 'LC_ALL', 'JUPYTERHUB_SINGLEUSER_APP']
-# c.Spawner.env_keep = ['PATH', 'PYTHONPATH', 'CONDA_ROOT', 'CONDA_DEFAULT_ENV', 'VIRTUAL_ENV', 'LANG', 'LC_ALL', 'JUPYTERHUB_SINGLEUSER_APP']
+c.Spawner.env_keep = ['PATH', 'PYTHONPATH', 'CONDA_ROOT', 'CONDA_DEFAULT_ENV', 'VIRTUAL_ENV', 'LANG', 'LC_ALL', 'JUPYTERHUB_SINGLEUSER_APP', 'CONDA_HOME']
 
 ## Extra environment variables to set for the single-user server's process.
 #  
@@ -1347,7 +1346,7 @@ c.Spawner.pre_spawn_hook = my_hook
 #  Defaults to an empty set, in which case no user has admin access.
 #  Default: set()
 # c.Authenticator.admin_users = set()
-c.Authenticator.admin_users = ['admin']
+c.Authenticator.admin_users = {'admin'}
 
 ## Set of usernames that are allowed to log in.
 #  
@@ -1414,7 +1413,7 @@ c.Authenticator.admin_users = ['admin']
 #      `Authenticator.blacklist` renamed to `blocked_users`
 #  Default: set()
 # c.Authenticator.blocked_users = set()
-c.Authenticator.blocked_users = ['root']
+c.Authenticator.blocked_users = {'root'}
 
 ## Delete any users from the database that do not pass validation
 #  
