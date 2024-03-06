@@ -7,7 +7,7 @@ if [ ! -d "$directory" ]; then
 fi
 
 usermod -a -G conda $1
-cp /app/ReadMe.md $directory
+cp /app/UserReadMe.md $directory
 
 #conda create --name tf ipykernel python=3.11 -y
 #python -m ipykernel install --user --name tf --display-name "tensorflow"
