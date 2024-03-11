@@ -4,6 +4,7 @@ directory=/work/$1
 
 if [ ! -d "$directory" ]; then
     mkdir $directory
+    ln -sd $directory work
 fi
 
 usermod -a -G conda $1

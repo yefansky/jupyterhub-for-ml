@@ -66,7 +66,7 @@ WORKDIR /app
 EXPOSE 8000
 
 
-RUN apt-get install -y vim wget curl tar zip rar p7zip-full p7zip-rar psmisc && \
+RUN apt-get install -y vim wget curl tar zip rar p7zip-full p7zip-rar psmisc cmake && \
 apt-get autoclean && \
 rm -rf /var/lib/apt/lists/*
 
